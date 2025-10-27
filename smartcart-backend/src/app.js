@@ -4,10 +4,10 @@ import dotenv from 'dotenv';
 import { connectDB} from  './config/db.js';
 
 //Importar rutas
-import authRoutes from './routes/authRoutes.js';
-import productRoutes from './routes/productRoutes.js';
-import cartRoutes from './routes/cartRoutes.js';            
-import orderRoutes from './routes/orderRoutes.js';
+import authRoutes from './routes/auth.js';
+import productRoutes from './routes/product.js';
+import cartRoutes from './routes/cart.js';            
+import orderRoutes from './routes/order.js';
 
 // Configurar variables de entorno
 dotenv.config();
