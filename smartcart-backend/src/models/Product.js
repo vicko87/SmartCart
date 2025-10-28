@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
    price: {
     type: Number,
     required: true,
-    trim: 0
+    min: 0
    },
    category: {
     type: String,
@@ -34,8 +34,7 @@ const productSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
-   },
-   timestamps: true // agrega automáticamente las fechas de creación y actualización.
-});
+   }
+}, { timestamps: true }); // agrega automáticamente las fechas de creación y actualización.
 
 export default mongoose.model('Product', productSchema);
