@@ -10,10 +10,11 @@ import {
 
 import { protect } from '../middlewares/auth.js';
 
+const router = express.Router();
+
 // Todas las rutas del carrito requieren autenticación
 router.use(protect);
 
-const router = express.Router();
 
 // Rutas del carrito
 router.get('/', getCart);
