@@ -2,9 +2,9 @@
   "name": "smartcart-backend",
   "version": "1.0.0",
   "main": "src/app.js",
-    "type": "module",
+  "type": "module",
   "scripts": {
-     "start": "node smartcart-backend/src/app.js",
+    "start": "node smartcart-backend/src/app.js",
     "dev": "nodemon smartcart-backend/src/app.js"
   },
   "keywords": [],
