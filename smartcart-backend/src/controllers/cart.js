@@ -36,10 +36,7 @@ export const getCart = async (req, res) => {
             }
         
             //verificar si el producto existe y pretence al usuario
-            const product = await Product.findOne({
-                _id: productId,
-                user: req.user._id
-            });
+            const product = await Product.findById(productId);
 
             if(!product){
                 return res.status(404).json({

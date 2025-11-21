@@ -58,3 +58,30 @@ export const register = async(req, res) => {
         res.status(500).json({message: 'Server error'});
     }
 }
+
+
+// Obtener usuario actual
+export const getCurrentUser = async (req, res) => {
+    try {
+        // req.user ya viene del middleware 'protect'
+        const user = await User.findById(req.user._id).select('-password');
+        
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found'
+            });
+        }
+
+        res.status(200).json({
+            _id: user._id,
+            name: user.name,
+            email: user.email
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Server error'
+        });
+    }
+};
